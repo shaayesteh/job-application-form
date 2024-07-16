@@ -9,18 +9,20 @@ interface CustomInputProps {
   min?: number | string;
 }
 
-const CustomInput: React.FC<CustomInputProps> = ({
+function CustomInput({
   label,
   type,
   value,
   onChange,
   error,
   min,
-}) => {
+}: CustomInputProps) {
   return (
     <div className="mb-4">
       <label className="block text-gray-700 dark:text-gray-300">{label}</label>
       <input
+        required
+        minLength={3}
         min={min}
         type={type}
         value={value}
@@ -30,6 +32,6 @@ const CustomInput: React.FC<CustomInputProps> = ({
       {error && <p className="text-red-500">{error}</p>}
     </div>
   );
-};
+}
 
 export default CustomInput;
