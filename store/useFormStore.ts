@@ -8,7 +8,7 @@ interface FormState {
   setFullName: (fullName: string) => void;
   setEmail: (email: string) => void;
   setYearsOfExperience: (yearsOfExperience: number) => void;
-  setSkills: (skills: string[]) => void;
+  setSkills: (skills: any[]) => void;
   resetForm: () => void;
 }
 

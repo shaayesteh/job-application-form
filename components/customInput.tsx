@@ -3,9 +3,10 @@ import React from "react";
 interface CustomInputProps {
   label: string;
   type: string;
-  value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string | number;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
+  min?: number | string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -14,11 +15,13 @@ const CustomInput: React.FC<CustomInputProps> = ({
   value,
   onChange,
   error,
+  min,
 }) => {
   return (
     <div className="mb-4">
       <label className="block text-gray-700 dark:text-gray-300">{label}</label>
       <input
+        min={min}
         type={type}
         value={value}
         onChange={onChange}
