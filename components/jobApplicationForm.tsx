@@ -43,10 +43,10 @@ function JobApplicationForm() {
     setError(null);
     try {
       const responseData = await createApplication({
-        ...data,
         fullName,
         email,
         yearsOfExperience,
+        skills,
       });
       setSubmittedData(responseData);
       resetForm();
